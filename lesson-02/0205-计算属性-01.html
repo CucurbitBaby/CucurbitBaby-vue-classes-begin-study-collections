@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1">
+      方法： {{a}}+{{b}}={{ sumFn() }} <br />
+      方法： {{a}}+{{b}}={{ sum }} <br />
+    </div>
+  </body>
+
+  <script>
+  // methods和computed区别(interview)
+  // 这儿还没区别
+  // computed——计算属性
+  // 1.缓存——性能
+  // 2.方便
+  //   读、写
+  //   属性的形式
+  let vm=new Vue({
+    el: '#div1',
+    data: {
+      a: 12,
+      b: 5
+    },
+    methods: {
+      sumFn(){
+        return this.a+this.b;
+      }
+    },
+    computed: {
+      sum(){
+        return this.a+this.b;
+      }
+    }
+  });
+  </script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+    <style media="screen">
+    .box {width:200px; height:200px; background:#CCC;}
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      <p>无v-once指令： {{ msg }}</p>
+      <p v-once>有v-once指令： {{ msg }}</p>
+      <input type="text" v-model="msg">
+    </div>
+  </body>
+
+  <script>
+    // 参考： https://www.jianshu.com/p/87b61a9c8a49
+  let vm=new Vue({
+    el: '#div1',
+    data: {
+      msg: '只去学院'
+    },
+    methods: {
+
+    }
+  });
+  </script>
+</html>

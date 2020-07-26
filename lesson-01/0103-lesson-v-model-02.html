@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1">
+      <input type="text" v-model="n1">+
+      <input type="text" v-model="n2">=
+      {{parseInt(n1)+parseInt(n2)}} <br />
+      {{n1+n2}}
+    </div>
+  </body>
+
+  <script>
+
+  // 通过v-model输入的数据都是字符串
+  // 但是 {{parseInt(n1)+parseInt(n2)}} 官方不推荐 用methods的方法吧
+
+  let vm=new Vue({
+    el: '#div1',
+    data: {
+      n1: 0, n2: 0
+    }
+  });
+  </script>
+</html>

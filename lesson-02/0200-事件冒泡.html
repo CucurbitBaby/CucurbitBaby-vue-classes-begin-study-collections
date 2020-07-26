@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件冒泡</title>
+  <style>
+
+    /* div1,div2,div3 {  } */
+
+    .div3 {
+      display: block;
+      width: 300px;
+      height: 300px;
+      background-color: royalblue;
+    }
+    .div2 {
+      margin: 30px;
+      width: 200px;
+      height: 200px;
+      background-color: greenyellow;
+    }
+    .div1 {
+      display: block;
+      margin: 30px;
+      width: 100px;
+      height: 100px;
+      background-color: rebeccapurple;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="div3" onclick="alert('3');">我是div3
+    <div class="div2" onclick="alert('2');">我是div2
+         <a class="div1" id ="xx" href="#" onclick="alert('1');">
+          我是div1
+          </a>
+    </div>
+</div>
+</body>
+</html>

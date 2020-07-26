@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1">
+      <strong v-bind:title="age+'岁'">{{name}}</strong>
+    </div>
+  </body>
+
+  <script>
+    // html缺少很多必要的功能: 不能获取数据; 不能计数; ..
+    // angla等框架最早是想给html添加一些功能： 让html多一些属性，让属性完成一些复杂的操作
+    // 指令：补充了html的属性 给html添加了一些很有意思的特征。
+
+    // v-bind:title 
+    // 向往属性里面输入数据, v-bind:title=""  v-bind:的""也是一个表达式
+    // 语法糖 :title
+  let vm=new Vue({
+    el: '#div1',
+    data: {
+      name: 'blue',
+      age: 18
+    }
+  });
+  </script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1">
+      <form action="index.html" method="post" @submit.prevent="submit(this)">
+        <input type="submit" value="提交">
+      </form>
+    </div>
+  </body>
+
+  <script>
+  // @submit.prevent.native="submit(this)"   直接跳转
+  // submit是vue的方法 并不是原生方法  
+  let vm=new Vue({
+    el: '#div1',
+    data: {
+
+    },
+    methods: {
+      submit(form){
+        alert('提交');
+        console.log(form);
+      }
+    }
+  });
+  </script>
+</html>

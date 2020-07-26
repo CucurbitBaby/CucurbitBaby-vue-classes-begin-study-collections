@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1">
+      <input type="button" value="按钮" @click.native="fn()">
+    </div>
+  </body>
+
+  <script>
+  //  @click="fn()"  原生js
+  //  @click.native="fn()"  不是这样用的是在组件里用到的
+  function fn(){
+    alert('原生');
+  }
+
+  let vm=new Vue({
+    el: '#div1',
+    data: {
+
+    },
+    methods: {
+      fn(){
+        alert('vue'); // 不执行
+      }
+    }
+  });
+  </script>
+</html>

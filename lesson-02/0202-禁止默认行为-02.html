@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="vue.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div id="div1">
+    <form action="index.html" method="post" onsubmit="console.log(this); return false" >
+      <input type="submit" value="提交">
+    </form>
+  </div>
+</body>
+
+<script>
+  // form不加 @submit.prevent="submit()"
+  // type=submit默认的行为就是提交表单
+  let vm = new Vue({
+    el: '#div1',
+    data: {
+
+    }
+  });
+</script>
+
+</html>

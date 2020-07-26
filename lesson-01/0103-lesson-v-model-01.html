@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1">
+      <input type="text" v-model="name">
+      <p>
+        {{name}}
+      </p>
+    </div>
+  </body>
+
+  <script>
+
+  // vue的methods为什么不能箭头函数  指向windows就找不到实例了
+
+  // v-model 双向绑定  不是哪儿都能用，只能用于输入型的组件 input select textarea
+  
+  // input的修改了  数据就修改了 数据修改了 下面的{{name}}就更新了
+  // chrome vm.name = 'red' 也是一样的操作
+  // 通过v-model输入的数据都是字符串
+
+  let vm=new Vue({
+    el: '#div1',
+    data: {
+      name: 'blue'
+    }
+  });
+  </script>
+</html>

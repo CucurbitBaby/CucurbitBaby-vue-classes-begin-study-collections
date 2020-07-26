@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1">
+      <strong :style="style_json">{{name}} :style支持数据字符串和数据对象</strong>
+    </div>
+  </body>
+
+  <script>
+
+  // v-bind可以用于任何属性： class和style有两外两种写法
+  //    class="aaa bbb ccc active"
+  //    style="width: 200px; height: 200px; background: red;"
+
+  let vm=new Vue({
+    el: '#div1',
+    data: {
+      name: 'blue',
+      age: 18,
+      style_str: 'width: 200px; background: yellow; display: block;',
+      style_json: {width: '200px', background: 'green', display: 'block'}
+    }
+  });
+  </script>
+</html>

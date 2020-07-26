@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1">
+      {{a}}
+      <input type="button" value="+5" @click="fn(5)">
+      <input type="button" value="+1" v-on:click="fn(1)">
+    </div>
+  </body>
+
+  <script>
+  let vm=new Vue({
+    el: '#div1',
+    data: {
+      a: 12
+    },
+    methods: {
+      fn(n){
+        this.a+=n;
+      }
+    }
+  });
+  </script>
+</html>

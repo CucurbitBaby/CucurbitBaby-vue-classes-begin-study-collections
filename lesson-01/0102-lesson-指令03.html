@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1">
+      <strong class="class_arr">原生字符串class</strong> <br />
+      <strong :class="class_arr">{{name}} :class 数组class</strong>
+    </div>
+  </body>
+
+  <script>
+  // v-bind可以用于任何属性： class和style有两外两种写法
+  //    class="aaa bbb ccc active"
+  //    style="width: 200px; height: 200px; background: red;"
+
+  let vm=new Vue({
+    el: '#div1',
+    data: {
+      name: 'blue',
+      age: 18,
+      class_str: 'aa bb cc active',
+      class_arr: ['aaa', 'bbb', 'ccc', 'active2']
+    }
+  });
+  </script>
+</html>

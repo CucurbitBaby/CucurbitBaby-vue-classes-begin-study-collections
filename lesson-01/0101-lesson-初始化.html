@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1">
+      姓名：{{name}}<br>
+      年龄：{{age}}<br>
+      出生：{{calcBirth()}}
+    </div>
+  </body>
+
+  <script>
+    // chrome 控制台
+    // vm
+    // vm.age
+    // vm.age++  试图自动刷新
+
+    // {{}} Vue表达式 可以写一些简单的表达式 {{age+5}}  复杂的不推荐: {{new Date().getFullYear()-age}} 推荐用methods里的方法
+
+  let vm=new Vue({
+    el: '#div1',
+    data: {
+      name: 'blue',
+      age: 18
+    },
+    methods: {
+      calcBirth(){
+        return new Date().getFullYear()-this.age;
+      }
+    }
+  });
+  </script>
+</html>

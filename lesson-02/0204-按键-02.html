@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1">
+      <input type="text" @keydown.ctrl.enter="fn()">
+    </div>
+  </body>
+
+  <script>
+  // self    只处理自己的事件 冒泡不处理  srcElement == this 冒泡开始的地方
+  // capture 执行捕获阶段的事件 
+  // 组合键：  @keydown.ctrl.enter="fn()
+  function fn(){
+    alert('原生');
+  }
+
+  let vm=new Vue({
+    el: '#div1',
+    data: {
+
+    },
+    methods: {
+      fn(){
+        alert('vue');
+      }
+    }
+  });
+  </script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件冒泡</title>
+  <style>
+    /* div1,div2,div3 {  } */
+
+    .div3 {
+      display: block;
+      width: 300px;
+      height: 300px;
+      background-color: royalblue;
+    }
+
+    .div2 {
+      margin: 30px;
+      width: 200px;
+      height: 200px;
+      background-color: greenyellow;
+    }
+
+    .div1 {
+      display: block;
+      margin: 30px;
+      width: 100px;
+      height: 100px;
+      background-color: rebeccapurple;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="div3" class="div3">我是div3
+    <div id="div2" class="div2">我是div2
+      <a id="div1" class="div1">  我是div1</a>
+    </div>
+  </div>
+
+
+  <script>
+    // 正常冒泡
+    // document.getElementById("div1").addEventListener("click", function (event) {
+    //     alert(1)
+    // });
+    // document.getElementById("div2").addEventListener("click", function (event) {
+    //     alert(2)
+    //   });
+    // document.getElementById("div3").addEventListener("click", function (event) {
+    //     alert(3)
+    // });
+
+    // 禁止事件冒泡
+    // document.getElementById("div1").addEventListener("click", function (event) {
+    //     alert(1)
+        
+    // });
+    // document.getElementById("div2").addEventListener("click", function (event) {
+    //     event.stopPropagation();
+    //     alert(2)
+    //     // 到我这儿就停， 外面的父容器的click事件都不执行了  我本身alert还是会执行的
+    //   });
+    // document.getElementById("div3").addEventListener("click", function (event) {
+    //     alert(3)
+    // });
+      
+    // 捕获阶段执行事件
+    document.getElementById("div1").addEventListener("click", function (event) {
+        alert(1)
+    }, true);
+  
+    document.getElementById("div2").addEventListener("click", function (event) {
+        alert(2)
+    }, true);
+    document.getElementById("div3").addEventListener("click", function (event) {
+        alert(3)
+    }, true);
+    document.getElementById("div3").addEventListener("click", function (event) {
+        alert('捕获完成了继续回来冒泡3')
+    }, false);
+
+ 
+  </script>
+</body>
+
+</html>
